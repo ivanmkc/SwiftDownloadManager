@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E38B962321A06C1500BF986E /* TileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38B962221A06C1500BF986E /* TileRequest.swift */; };
 		E3D3DFD121A0189C0067DEA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3DFD021A0189C0067DEA7 /* AppDelegate.swift */; };
 		E3D3DFD321A0189C0067DEA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3DFD221A0189C0067DEA7 /* ViewController.swift */; };
 		E3D3DFD621A0189C0067DEA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D3DFD421A0189C0067DEA7 /* Main.storyboard */; };
@@ -14,6 +15,10 @@
 		E3D3DFDB21A0189F0067DEA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D3DFD921A0189F0067DEA7 /* LaunchScreen.storyboard */; };
 		E3D3DFE621A0189F0067DEA7 /* DownloadManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3DFE521A0189F0067DEA7 /* DownloadManagerTests.swift */; };
 		E3D3DFF121A0189F0067DEA7 /* DownloadManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3DFF021A0189F0067DEA7 /* DownloadManagerUITests.swift */; };
+		E3D3DFFF21A05B100067DEA7 /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3DFFE21A05B100067DEA7 /* TaskManager.swift */; };
+		E3D3E00121A061DF0067DEA7 /* PendingOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3E00021A061DF0067DEA7 /* PendingOperations.swift */; };
+		E3D3E00421A062D20067DEA7 /* TileDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3E00321A062D20067DEA7 /* TileDownloadOperation.swift */; };
+		E3D3E00621A063110067DEA7 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3E00521A063110067DEA7 /* Tile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E38B962221A06C1500BF986E /* TileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileRequest.swift; sourceTree = "<group>"; };
 		E3D3DFCD21A0189C0067DEA7 /* DownloadManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DownloadManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D3DFD021A0189C0067DEA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3D3DFD221A0189C0067DEA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +53,10 @@
 		E3D3DFEC21A0189F0067DEA7 /* DownloadManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DownloadManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D3DFF021A0189F0067DEA7 /* DownloadManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManagerUITests.swift; sourceTree = "<group>"; };
 		E3D3DFF221A0189F0067DEA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3D3DFFE21A05B100067DEA7 /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
+		E3D3E00021A061DF0067DEA7 /* PendingOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOperations.swift; sourceTree = "<group>"; };
+		E3D3E00321A062D20067DEA7 /* TileDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileDownloadOperation.swift; sourceTree = "<group>"; };
+		E3D3E00521A063110067DEA7 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +113,10 @@
 				E3D3DFD721A0189F0067DEA7 /* Assets.xcassets */,
 				E3D3DFD921A0189F0067DEA7 /* LaunchScreen.storyboard */,
 				E3D3DFDC21A0189F0067DEA7 /* Info.plist */,
+				E3D3DFFE21A05B100067DEA7 /* TaskManager.swift */,
+				E3D3E00221A062BA0067DEA7 /* Operations */,
+				E3D3E00521A063110067DEA7 /* Tile.swift */,
+				E38B962221A06C1500BF986E /* TileRequest.swift */,
 			);
 			path = DownloadManager;
 			sourceTree = "<group>";
@@ -123,6 +137,15 @@
 				E3D3DFF221A0189F0067DEA7 /* Info.plist */,
 			);
 			path = DownloadManagerUITests;
+			sourceTree = "<group>";
+		};
+		E3D3E00221A062BA0067DEA7 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E3D3E00021A061DF0067DEA7 /* PendingOperations.swift */,
+				E3D3E00321A062D20067DEA7 /* TileDownloadOperation.swift */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +280,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D3DFD321A0189C0067DEA7 /* ViewController.swift in Sources */,
+				E3D3E00621A063110067DEA7 /* Tile.swift in Sources */,
+				E3D3E00421A062D20067DEA7 /* TileDownloadOperation.swift in Sources */,
+				E38B962321A06C1500BF986E /* TileRequest.swift in Sources */,
+				E3D3DFFF21A05B100067DEA7 /* TaskManager.swift in Sources */,
 				E3D3DFD121A0189C0067DEA7 /* AppDelegate.swift in Sources */,
+				E3D3E00121A061DF0067DEA7 /* PendingOperations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
