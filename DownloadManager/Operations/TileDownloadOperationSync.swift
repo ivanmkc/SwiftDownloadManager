@@ -9,28 +9,28 @@
 import Foundation
 
 class TileDownloadOperationSync: Operation {
-  //1
-  let request: TileRequest
-
-  private var timer: Timer?
-
-  //2
-  init(_ request: TileRequest) {
-    self.request = request
-  }
-
-  //3
-  override func main() {
-    //4
-    if isCancelled {
-      return
-    }
-
-    //5 Download the tile info
-    request.status = .processing
-
-    sleep(2)
+    //1
+    let request: TileRequest
     
-    request.status = TileRequestStatus.success(result: request.tile.description)
-  }
+    private var timer: Timer?
+    
+    //2
+    init(_ request: TileRequest) {
+        self.request = request
+    }
+    
+    //3
+    override func main() {
+        //4
+        if isCancelled {
+            return
+        }
+        
+        //5 Download the tile info
+        request.status = .processing
+        
+        sleep(2)
+        
+        request.status = TileRequestStatus.success(result: request.tile.description)
+    }
 }

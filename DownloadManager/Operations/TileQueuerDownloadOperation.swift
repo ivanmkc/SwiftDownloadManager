@@ -1,15 +1,16 @@
 //
-//  ImageDownloader.swift
+//  TileQueuerDownloadOperation.swift
 //  DownloadManager
 //
-//  Created by ivan_man-kit-cheung on 11/17/18.
+//  Created by Ivan Cheung on 11/22/18.
 //  Copyright © 2018 ivan_man-kit-cheung. All rights reserved.
 //
 
 import Foundation
+import Queuer
 
 // From: https://blog.infullmobile.com/basics-of-operations-and-operation-queues-in-ios-a8e7b02950c3
-class TileDownloadOperation: AsyncOperation {
+class TileQueuerDownloadOperation: ConcurrentOperation {
     //1
     let request: TileRequest
     
@@ -19,7 +20,7 @@ class TileDownloadOperation: AsyncOperation {
     }
     
     //3
-    override func main() {
+    override func execute() {
         //4
         if isCancelled {
             return
@@ -29,20 +30,22 @@ class TileDownloadOperation: AsyncOperation {
         request.status = .processing
         
         let timer = Timer(timeInterval: 3, repeats: false) { [weak self] (_) in
-            guard let weakSelf = self,
-                !weakSelf.isCancelled
-                else {
-                    self?.state = .finished
-                    return
+            guard let weakSelf = self else { return }
+            guard !weakSelf.isCancelled else {
+                weakSelf.request.status = .cancelled
+                weakSelf.finish(false)
+                return
             }
             
             let request = weakSelf.request
             
             request.status = TileRequestStatus.success(result: request.tile.description)
-            self?.state = .finished
+            weakSelf.finish(false)
         }
         
         RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
         RunLoop.current.run()
     }
 }
+
+

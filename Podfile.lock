@@ -1,0 +1,16 @@
+PODS:
+  - Queuer (2.0.0)
+
+DEPENDENCIES:
+  - Queuer
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Queuer
+
+SPEC CHECKSUMS:
+  Queuer: d18c86f67e0d765108fa0d569dc51bfaef9adc2a
+
+PODFILE CHECKSUM: 1b983f9fbc8b1176ea8c561ba903aea76f294fed
+
+COCOAPODS: 1.5.3

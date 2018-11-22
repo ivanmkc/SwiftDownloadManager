@@ -1,2 +1,5 @@
 
-DownloadManager\.xcodeproj/project\.xcworkspace/xcuserdata/chosan\.xcuserdatad/
+DownloadManager\.xcodeproj/project\.xcworkspace/xcuserdata/
+Pods/
+.DS_Store
+DownloadManager\.xcodeproj/xcuserdata
